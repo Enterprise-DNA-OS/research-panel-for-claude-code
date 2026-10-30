@@ -8,4 +8,6 @@ The comparison page passes check-page. A headless Chromium check verified deskto
 
 The synthetic importer exercises documented column mapping, preserved source data, masked contacts, duplicate rows, rollback and explicit updates. No live Great Question account or customer export was accessed. Reconciliation of actual historical study records remains deployment work.
 
-The workflow includes Windows and Linux on Node 20/22 and PostgreSQL 17. Hosted results are recorded after the private push; configuration alone is not a passing test.
+The workflow includes Windows and Linux on Node 20/22 and PostgreSQL 17. The [first hosted run](https://github.com/Enterprise-DNA-OS/research-panel-for-claude-code/actions/runs/40994635456) could not start its jobs. GitHub reported failed account payments or a spending-limit restriction. No hosted test steps ran. Windows, Node 20 and hosted PostgreSQL 17 therefore remain unverified. Local Linux Node 22.23.4 passed the full suite on PGlite and PostgreSQL 18.4. No billing setting was changed.
+
+The private repository and noindex page were pushed. The page commit is 9292cc42 in EDNA-Landing-Pages. The public website URL returned 404 in the post-push check; deployment was not claimed. Local page rendering and noindex were verified. Publication remains with the runner.
