@@ -1,13 +1,40 @@
 [
   {
     "name": "week",
-    "title": "This week",
-    "subtitle": "Research Panel for Claude Code: what needs attention, rendered by npm run view",
+    "title": "Research operations this week",
+    "subtitle": "Fictional demo. Private read-only snapshot.",
     "sections": [
       {
-        "title": "Needs attention",
-        "note": "TODO(author): point this at the industry's attention view (overdue, stuck, quiet).",
-        "sql": "select 'replace me' as item, 'TODO(author)' as why"
+        "title": "Places still needed",
+        "sql": "select * from v_quotas order by study,segment"
+      },
+      {
+        "title": "Follow-up",
+        "sql": "select * from v_attention order by issue,reference"
+      }
+    ]
+  },
+  {
+    "name": "panel",
+    "title": "Panel eligibility",
+    "sections": [
+      {
+        "title": "Readiness by person",
+        "sql": "select code,name,segment,eligibility,contacts_30d,last_contact from v_panel order by code"
+      },
+      {
+        "title": "Evidence checks",
+        "sql": "select * from v_compliance order by rule,reference"
+      }
+    ]
+  },
+  {
+    "name": "sessions",
+    "title": "Interview run sheet",
+    "sections": [
+      {
+        "title": "Bookings",
+        "sql": "select * from v_sessions order by starts_at,code"
       }
     ]
   }

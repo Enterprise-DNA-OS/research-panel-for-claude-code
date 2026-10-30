@@ -1,11 +1,58 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
-    "file": "name",
+    "name": "study-brief",
+    "title": "Study brief and recruitment progress",
+    "for_each": "select id,code from studies order by code",
+    "file": "code",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Purpose and responsibility",
+        "layout": "record",
+        "sql": "select code,title,owner,purpose,consent_version,due_on,status from studies where id=$1"
+      },
+      {
+        "title": "Cohort places",
+        "sql": "select q.segment,q.target,count(e.id) filter(where e.status in ('scheduled','completed'))::int filled from quotas q left join participations e on e.study_id=q.study_id and e.segment=q.segment where q.study_id=$1 group by q.segment,q.target order by q.segment"
+      },
+      {
+        "title": "Run sheet",
+        "sql": "select e.code,p.code participant,e.segment,e.researcher,e.starts_at,e.status from participations e join participants p on p.id=e.participant_id where e.study_id=$1 order by e.starts_at,e.code"
+      }
+    ]
+  },
+  {
+    "name": "consent-record",
+    "title": "Participant consent and history record",
+    "for_each": "select id,code from participants order by code",
+    "file": "code",
+    "sections": [
+      {
+        "title": "Recorded evidence",
+        "layout": "record",
+        "sql": "select code,name,consent,consent_version,consent_on,consent_evidence,notice_evidence,history_reviewed_on,history_evidence,retention_review_on from participants where id=$1",
+        "note": "Evidence record only. This is not a signature, consent request or certification."
+      },
+      {
+        "title": "Contact history",
+        "sql": "select contacted_on,evidence from contacts where participant_id=$1 order by contacted_on,id"
+      },
+      {
+        "title": "Operator notes",
+        "sql": "select actor,note,created_at from activity where entity='participants' and entity_id=$1 and note is not null order by created_at,id"
+      }
+    ]
+  },
+  {
+    "name": "incentive-reconciliation",
+    "title": "Study incentive reconciliation",
+    "for_each": "select id,code from studies order by code",
+    "file": "code",
+    "sections": [
+      {
+        "title": "Amounts recorded",
+        "sql": "select e.code,p.code participant,e.status,e.incentive_cents,e.currency,e.settled_on,e.settlement_evidence from participations e join participants p on p.id=e.participant_id where e.study_id=$1 order by e.code",
+        "note": "Records of payments made elsewhere. This document does not issue or authorise payment."
+      }
     ]
   }
 ]

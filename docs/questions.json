@@ -1,0 +1,42 @@
+[
+  {
+    "question": "Which studies still need owners or operators to fill their interview places?",
+    "command": "npm run panel -- quota-gaps"
+  },
+  {
+    "question": "Who is ready for another research invitation today?",
+    "command": "npm run panel -- eligible"
+  },
+  {
+    "question": "Who has been contacted too often or completed a study too recently?",
+    "command": "npm run panel -- contact-pressure"
+  },
+  {
+    "question": "Which panel records need consent or retention evidence reviewed?",
+    "command": "npm run panel -- consent-review"
+  },
+  {
+    "question": "Which booked interviews have already passed without an outcome?",
+    "command": "npm run panel -- attention"
+  },
+  {
+    "question": "Which completed interviews still have an unsettled incentive record?",
+    "command": "npm run panel -- incentives-due"
+  },
+  {
+    "question": "Which cohorts have plenty of names but few eligible people?",
+    "command": "npm run panel -- coverage"
+  },
+  {
+    "question": "Which studies have recorded no-shows?",
+    "command": "npm run panel -- no-shows"
+  },
+  {
+    "question": "How many interviews and minutes is each researcher carrying?",
+    "command": "npm run panel -- researcher-load"
+  },
+  {
+    "question": "Who changed a participant record and what evidence did they record?",
+    "command": "npm run panel -- show --person=P01"
+  }
+]

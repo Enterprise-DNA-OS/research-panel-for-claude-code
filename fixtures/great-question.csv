@@ -1,0 +1,3 @@
+candidate_id,Name,Email,Segment,Employer,Opted in
+import-101,Imani Fox,imani@example.test,Owner,"Example, North",true
+import-102,Jo Lee,jo@example.test,Operator,Example South,false

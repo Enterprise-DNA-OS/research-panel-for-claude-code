@@ -1,0 +1,24 @@
+{
+  "captured": "2026-10-30T02:53:45.968Z",
+  "source": "Fictional seed, actual CLI run function and human formatter",
+  "screens": [
+    {
+      "title": "Fill the missing places",
+      "ask": "Which studies still need interview participants?",
+      "command": "npm run panel -- quota-gaps",
+      "output": "  study  segment   target  filled  completed  gap  due_on    \n  -----  --------  ------  ------  ---------  ---  ----------\n  ST01   Operator  2       1       1          1    2026-11-06\n  ST01   Owner     3       1       0          2    2026-11-06\n  ST02   Operator  2       1       0          1    2026-10-28"
+    },
+    {
+      "title": "Protect your panel",
+      "ask": "Who has been contacted too often or completed a study recently?",
+      "command": "npm run panel -- contact-pressure",
+      "output": "  code  name        segment   contacts_30d  last_contact  eligibility  \n  ----  ----------  --------  ------------  ------------  -------------\n  P06   Fin Morgan  Owner     2             2026-10-27    contact-limit\n  P02   Ben Reed    Operator  0                           cooldown     "
+    },
+    {
+      "title": "Close the loose ends",
+      "ask": "Which research work needs attention this week?",
+      "command": "npm run panel -- attention",
+      "output": "  issue                 reference  owner  detail                                                   \n  --------------------  ---------  -----  ---------------------------------------------------------\n  incentive-unrecorded  EN01       Mira   Completed participation has an unsettled incentive record\n  outcome-missing       EN02       Mira   Session ended without an outcome                         \n  overdue-study         ST02       Noah   Research deadline passed                                 "
+    }
+  ]
+}
