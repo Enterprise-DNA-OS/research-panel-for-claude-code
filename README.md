@@ -6,7 +6,7 @@ Your research participants, consent evidence, interview places and follow-up wor
 |---|---|---|
 | Free, MIT. Install the demo and use your own database. | Your cohort fields, consent rules, history mapping and documents. | Installed and operated through Omni by Enterprise DNA. One setup fee, then a retainer. |
 
-[Get your version built](https://enterprisedna.co/omni/book/?offer=replace-software&utm_campaign=great-question&utm_source=github&utm_medium=readme) · [Instead of Great Question](https://enterprisedna.co/omni/instead-of/great-question)
+[Get your version built](https://enterprisedna.co/omni/book/?offer=replace-software&utm_campaign=great-question&utm_source=github&utm_medium=readme) · [Instead of Great Question](https://enterprisedna.co/omni/instead-of/great-question?utm_source=github&utm_medium=readme&utm_campaign=great-question)
 
 ## Quick start
 
